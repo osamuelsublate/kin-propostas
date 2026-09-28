@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#211816" />
     <meta name="description" content="Duas propostas de landing page para a Kin, clube urbano de movimento na Vila Mariana. Escolha uma capa para ver a página." />
-    <meta property="og:title" content="Kin — Propostas de landing page" />
+    <meta property="og:title" content="Kin — Duas propostas para você escolher" />
     <meta property="og:description" content="Versão 1: direção autoral. Versão 2: fiel ao briefing." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -39,22 +39,22 @@
         background: radial-gradient(ellipse at 50% -10%, #3a2a25 0, transparent 60%), var(--stand);
         color: var(--paper);
         font-family: var(--body);
-        font-size: 17px;
+        font-size: 15px;
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
       }
       a { color: inherit; }
-      .page { max-width: 1240px; margin: 0 auto; padding: max(40px, env(safe-area-inset-top)) 24px max(48px, env(safe-area-inset-bottom)); }
+      .page { max-width: 1040px; margin: 0 auto; padding: max(32px, env(safe-area-inset-top)) 24px max(40px, env(safe-area-inset-bottom)); }
 
-      .intro { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px 48px; padding-bottom: 36px; border-bottom: 1px solid #f6f4eb24; }
-      .brand { font-family: var(--display); font-weight: 900; font-stretch: 110%; font-size: 40px; line-height: 1; letter-spacing: -.03em; }
+      .intro { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 40px; padding-bottom: 28px; border-bottom: 1px solid #f6f4eb24; }
+      .brand { font-family: var(--display); font-weight: 900; font-stretch: 110%; font-size: 32px; line-height: 1; letter-spacing: -.03em; }
       .brand span { color: var(--coral); }
-      .intro h1 { margin: 18px 0 0; font-family: var(--display); font-weight: 800; font-stretch: 62%; font-size: clamp(44px, 6vw, 84px); line-height: .92; letter-spacing: -.005em; text-transform: uppercase; text-wrap: balance; }
+      .intro h1 { margin: 14px 0 0; font-family: var(--display); font-weight: 800; font-stretch: 62%; font-size: clamp(36px, 4.8vw, 67px); line-height: .92; letter-spacing: -.005em; text-transform: uppercase; text-wrap: balance; }
       .intro h1 em { font-style: italic; font-weight: 400; font-stretch: 118%; text-transform: none; color: var(--lime); letter-spacing: -.03em; }
       .intro p { margin: 0; max-width: 34ch; color: var(--paper-dim); }
       .intro p strong { color: var(--paper); font-weight: 700; }
 
-      .stand { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); margin-top: 48px; perspective: 1400px; }
+      .stand { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3.2vw, 44px); margin-top: 38px; perspective: 1400px; }
 
       .cover {
         position: relative; display: flex; flex-direction: column; aspect-ratio: 3 / 4.15; overflow: hidden;
@@ -64,58 +64,57 @@
         transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s;
         will-change: transform;
       }
-      .cover:hover, .cover:focus-visible { --lift: -10px; box-shadow: 0 1px 0 #ffffff14 inset, 0 50px 80px -24px #000d, 0 18px 30px -14px #0009; }
+      .cover:hover, .cover:focus-visible { --lift: -8px; box-shadow: 0 1px 0 #ffffff14 inset, 0 50px 80px -24px #000d, 0 18px 30px -14px #0009; }
       .cover:focus-visible { outline: 3px solid var(--lime); outline-offset: 6px; }
       /* spine highlight, like light on a glossy cover */
       .cover::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, #ffffff1f 0, transparent 7%, transparent 55%, #ffffff12 75%, transparent 90%); mix-blend-mode: screen; }
 
-      .masthead { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: 18px 22px 14px; }
-      .issue { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; padding-bottom: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; text-align: right; }
+      .masthead { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; padding: 14px 18px 11px; }
+      .issue { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; padding-bottom: 5px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; text-align: right; }
       .photo { position: relative; flex: 1; overflow: hidden; }
       .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .8s cubic-bezier(.2, .8, .2, 1); }
       .cover:hover .photo img { transform: scale(1.035); }
-      .lines { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 72px 22px 22px; }
+      .lines { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 58px 18px 18px; }
       .lines h2 { margin: 0; text-wrap: balance; }
-      .lines ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 4px; }
-      .cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 12px 18px; border-radius: 999px; font-weight: 700; font-size: 15px; transition: gap .3s; }
-      .cover:hover .cta { gap: 16px; }
+      .lines ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; }
+      .cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 15px; border-radius: 999px; font-weight: 700; font-size: 13px; transition: gap .3s; }
+      .cover:hover .cta { gap: 13px; }
 
       /* Versão 1 — the cover wears v1's own type and palette */
       .cover-v1 { background: var(--ink); color: var(--paper); }
       .cover-v1 .masthead { background: var(--coral); color: var(--ink); }
-      .cover-v1 .logo { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(64px, 9vw, 118px); line-height: .78; letter-spacing: -.045em; }
+      .cover-v1 .logo { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(52px, 7.2vw, 94px); line-height: .78; letter-spacing: -.045em; }
       .cover-v1 .logo span { color: var(--lime); -webkit-text-stroke: 0; }
       .cover-v1 .issue { font-family: var(--mono); font-weight: 600; }
-      .cover-v1 .lines { background: linear-gradient(0deg, #2a1c1a 0, #2a1c1a calc(100% - 72px), #2a1c1a00 100%); }
-      .cover-v1 .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
-      .cover-v1 .lines h2 { margin-top: 6px; font-family: var(--display); font-weight: 900; font-stretch: 58%; font-size: clamp(36px, 4.2vw, 58px); line-height: .9; text-transform: uppercase; }
+      .cover-v1 .lines { background: linear-gradient(0deg, #2a1c1a 0, #2a1c1a calc(100% - 58px), #2a1c1a00 100%); }
+      .cover-v1 .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
+      .cover-v1 .lines h2 { margin-top: 6px; font-family: var(--display); font-weight: 900; font-stretch: 58%; font-size: clamp(29px, 3.4vw, 46px); line-height: .9; text-transform: uppercase; }
       .cover-v1 .lines h2 em { font-style: italic; font-weight: 400; font-stretch: 120%; text-transform: none; color: var(--lime); letter-spacing: -.03em; }
-      .cover-v1 li { font-size: 15px; color: #eadfd6; }
-      .cover-v1 .cta { background: var(--lime); color: var(--ink); font-family: var(--display); font-stretch: 115%; letter-spacing: .06em; text-transform: uppercase; font-size: 13px; }
+      .cover-v1 li { font-size: 13px; color: #eadfd6; }
+      .cover-v1 .cta { background: var(--lime); color: var(--ink); font-family: var(--display); font-stretch: 115%; letter-spacing: .06em; text-transform: uppercase; font-size: 11px; }
 
       /* Versão 2 — the cover wears the briefing's type and palette */
       .cover-v2 { background: var(--v2-brown); color: var(--v2-cream); }
       .cover-v2 .masthead { background: var(--v2-sand); color: var(--v2-brown); }
-      .cover-v2 .logo { display: block; width: clamp(150px, 20vw, 250px); height: auto; }
+      .cover-v2 .logo { display: block; width: clamp(120px, 16vw, 200px); height: auto; }
       .cover-v2 .issue { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: .08em; }
-      .cover-v2 .lines { background: linear-gradient(0deg, #5c3a1d 0, #5c3a1d calc(100% - 72px), #5c3a1d00 100%); }
-      .cover-v2 .kicker { display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--v2-terracotta); color: var(--v2-sand); font: 700 12px 'Be Vietnam Pro', sans-serif; letter-spacing: .04em; }
-      .cover-v2 .lines h2 { margin-top: 12px; font-family: 'Encode Sans', sans-serif; font-weight: 600; font-stretch: 75%; font-size: clamp(34px, 3.9vw, 54px); line-height: .95; letter-spacing: -.01em; }
-      .cover-v2 li { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; color: var(--v2-sand); }
+      .cover-v2 .lines { background: linear-gradient(0deg, #5c3a1d 0, #5c3a1d calc(100% - 58px), #5c3a1d00 100%); }
+      .cover-v2 .kicker { display: inline-block; padding: 5px 10px; border-radius: 999px; background: var(--v2-terracotta); color: var(--v2-sand); font: 700 11px 'Be Vietnam Pro', sans-serif; letter-spacing: .04em; }
+      .cover-v2 .lines h2 { margin-top: 10px; font-family: 'Encode Sans', sans-serif; font-weight: 600; font-stretch: 75%; font-size: clamp(28px, 3.1vw, 43px); line-height: .95; letter-spacing: -.01em; }
+      .cover-v2 li { font-family: 'Be Vietnam Pro', sans-serif; font-size: 12.5px; color: var(--v2-sand); }
       .cover-v2 .cta { background: var(--v2-cream); color: var(--v2-brown); font-family: 'Be Vietnam Pro', sans-serif; }
 
-      .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 48px; padding-top: 20px; border-top: 1px solid #f6f4eb24; color: var(--paper-dim); font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
 
       @media (max-width: 760px) {
-        .stand { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+        .stand { grid-template-columns: 1fr; max-width: 370px; margin-left: auto; margin-right: auto; }
         .cover { aspect-ratio: auto; }
         .photo { flex: none; aspect-ratio: 1 / 1; }
-        .lines { position: relative; padding-top: 20px; }
+        .lines { position: relative; padding-top: 16px; }
         .cover-v1 .lines, .cover-v2 .lines { background-image: none; }
         .cover-v1 .lines { background-color: #2a1c1a; }
         .cover-v2 .lines { background-color: #5c3a1d; }
-        .cover-v1 .logo { font-size: 92px; }
-        .cover-v2 .logo { width: 200px; }
+        .cover-v1 .logo { font-size: 74px; }
+        .cover-v2 .logo { width: 160px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .cover, .photo img, .cta { transition: none; }
@@ -127,9 +126,9 @@
       <header class="intro">
         <div>
           <div class="brand" aria-label="Kin">kin<span>.</span></div>
-          <h1>Duas capas,<br /> <em>um clube.</em></h1>
+          <h1>Duas propostas,<br /> <em>para você escolher.</em></h1>
         </div>
-        <p>Proposta de landing page para a Kin, clube urbano de movimento na Vila Mariana. <strong>Escolha uma capa para abrir a página.</strong></p>
+        <p>Duas direções diferentes para a landing page da Kin. <strong>Clique em uma capa para abrir a página.</strong></p>
       </header>
 
       <main class="stand">
@@ -170,10 +169,6 @@
         </a>
       </main>
 
-      <footer class="foot">
-        <span>Kin · Clube urbano de movimento</span>
-        <span>Rua Correia Dias, 73 · Vila Mariana · São Paulo</span>
-      </footer>
     </div>
     <script>
       // Covers tilt toward the pointer, like picking a magazine up from the stand.
