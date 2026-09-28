@@ -1,0 +1,21 @@
+/* Hero visual: chronophotographic movement traces (see HeroMotion.jsx). */
+.hero-motion{position:absolute;z-index:1;top:19px;right:-2%;width:56%;height:650px;pointer-events:none;color:var(--ink)}
+.hero-motion-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;animation:hero-motion-in .9s ease-out both}
+.hero-motion-meet{position:absolute;right:7%;top:56px;display:grid;grid-template-columns:auto auto;align-items:center;column-gap:10px;row-gap:6px;animation:hero-motion-in .9s .15s ease-out both}
+.hero-motion-meet i{width:9px;height:9px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 4px rgba(246,244,235,.28)}
+.hero-motion-meet span{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;line-height:1.2;opacity:.75}
+.hero-motion-meet strong{grid-column:2;font-size:30px;font-weight:600;letter-spacing:-1.5px;line-height:1}
+.hero-motion-meet span:last-child{grid-column:2}
+@keyframes hero-motion-in{from{opacity:0}to{opacity:1}}
+
+@media(min-width:1600px){.hero-motion{right:calc((100vw - 1550px)/2);width:780px}}
+@media(max-width:1150px){.hero-motion{height:590px;right:0;top:24px;width:57%}}
+@media(max-width:900px){.hero-motion{height:510px;right:0;top:61px;width:56%}.hero-motion-meet strong{font-size:24px}.hero-motion-meet span{font-size:7px;letter-spacing:1.1px}}
+@media(max-width:600px){
+  .hero-motion{position:relative;right:auto;top:auto;width:calc(100% + 46px);height:360px;margin:6px -23px -4px}
+  .hero-motion-meet{right:23px;top:10px;column-gap:8px;row-gap:4px}
+  .hero-motion-meet strong{font-size:21px;letter-spacing:-1px}
+  .hero-motion-meet span{font-size:6px;letter-spacing:1px}
+}
+@media(max-width:370px){.hero-motion{height:320px}}
+@media(prefers-reduced-motion:reduce){.hero-motion-canvas,.hero-motion-meet{animation:none}}

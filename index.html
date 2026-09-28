@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#211816" />
+    <meta name="description" content="Duas propostas de landing page para a Kin, clube urbano de movimento na Vila Mariana. Escolha uma capa para ver a página." />
+    <meta property="og:title" content="Kin — Propostas de landing page" />
+    <meta property="og:description" content="Versão 1: direção autoral. Versão 2: fiel ao briefing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <link rel="icon" type="image/svg+xml" href="versao-2/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wdth,wght@0,50..150,400..900;1,50..150,400..900&family=Atkinson+Hyperlegible+Next:wght@400..700&family=Atkinson+Hyperlegible+Mono:wght@400..600&family=Be+Vietnam+Pro:wght@400;700&family=Encode+Sans:wdth,wght@75,600&display=swap" rel="stylesheet" />
+    <title>Kin — Propostas de landing page</title>
+    <style>
+      :root {
+        --stand: #211816;
+        --stand-2: #2c201d;
+        --paper: #f6f4eb;
+        --paper-dim: #cdbfb3;
+        --lime: #d9ee88;
+        --coral: #f27860;
+        --ink: #49302e;
+        --v2-brown: #8d5b2f;
+        --v2-terracotta: #c47c4a;
+        --v2-sand: #ecdfb7;
+        --v2-cream: #f9f7ec;
+        --display: 'Anybody', 'Arial Narrow', sans-serif;
+        --body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+        --mono: 'Atkinson Hyperlegible Mono', ui-monospace, monospace;
+        color-scheme: dark;
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        min-height: 100vh;
+        background: radial-gradient(ellipse at 50% -10%, #3a2a25 0, transparent 60%), var(--stand);
+        color: var(--paper);
+        font-family: var(--body);
+        font-size: 17px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; }
+      .page { max-width: 1240px; margin: 0 auto; padding: max(40px, env(safe-area-inset-top)) 24px max(48px, env(safe-area-inset-bottom)); }
+
+      .intro { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px 48px; padding-bottom: 36px; border-bottom: 1px solid #f6f4eb24; }
+      .brand { font-family: var(--display); font-weight: 900; font-stretch: 110%; font-size: 40px; line-height: 1; letter-spacing: -.03em; }
+      .brand span { color: var(--coral); }
+      .intro h1 { margin: 18px 0 0; font-family: var(--display); font-weight: 800; font-stretch: 62%; font-size: clamp(44px, 6vw, 84px); line-height: .92; letter-spacing: -.005em; text-transform: uppercase; text-wrap: balance; }
+      .intro h1 em { font-style: italic; font-weight: 400; font-stretch: 118%; text-transform: none; color: var(--lime); letter-spacing: -.03em; }
+      .intro p { margin: 0; max-width: 34ch; color: var(--paper-dim); }
+      .intro p strong { color: var(--paper); font-weight: 700; }
+
+      .stand { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); margin-top: 48px; perspective: 1400px; }
+
+      .cover {
+        position: relative; display: flex; flex-direction: column; aspect-ratio: 3 / 4.15; overflow: hidden;
+        border-radius: 4px; text-decoration: none;
+        box-shadow: 0 1px 0 #ffffff14 inset, 0 30px 60px -20px #000c, 0 12px 20px -12px #0008;
+        transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+        transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s;
+        will-change: transform;
+      }
+      .cover:hover, .cover:focus-visible { --lift: -10px; box-shadow: 0 1px 0 #ffffff14 inset, 0 50px 80px -24px #000d, 0 18px 30px -14px #0009; }
+      .cover:focus-visible { outline: 3px solid var(--lime); outline-offset: 6px; }
+      /* spine highlight, like light on a glossy cover */
+      .cover::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, #ffffff1f 0, transparent 7%, transparent 55%, #ffffff12 75%, transparent 90%); mix-blend-mode: screen; }
+
+      .masthead { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: 18px 22px 14px; }
+      .issue { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; padding-bottom: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; text-align: right; }
+      .photo { position: relative; flex: 1; overflow: hidden; }
+      .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .8s cubic-bezier(.2, .8, .2, 1); }
+      .cover:hover .photo img { transform: scale(1.035); }
+      .lines { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 72px 22px 22px; }
+      .lines h2 { margin: 0; text-wrap: balance; }
+      .lines ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 4px; }
+      .cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 12px 18px; border-radius: 999px; font-weight: 700; font-size: 15px; transition: gap .3s; }
+      .cover:hover .cta { gap: 16px; }
+
+      /* Versão 1 — the cover wears v1's own type and palette */
+      .cover-v1 { background: var(--ink); color: var(--paper); }
+      .cover-v1 .masthead { background: var(--coral); color: var(--ink); }
+      .cover-v1 .logo { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(64px, 9vw, 118px); line-height: .78; letter-spacing: -.045em; }
+      .cover-v1 .logo span { color: var(--lime); -webkit-text-stroke: 0; }
+      .cover-v1 .issue { font-family: var(--mono); font-weight: 600; }
+      .cover-v1 .lines { background: linear-gradient(0deg, #2a1c1a 0, #2a1c1a calc(100% - 72px), #2a1c1a00 100%); }
+      .cover-v1 .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
+      .cover-v1 .lines h2 { margin-top: 6px; font-family: var(--display); font-weight: 900; font-stretch: 58%; font-size: clamp(36px, 4.2vw, 58px); line-height: .9; text-transform: uppercase; }
+      .cover-v1 .lines h2 em { font-style: italic; font-weight: 400; font-stretch: 120%; text-transform: none; color: var(--lime); letter-spacing: -.03em; }
+      .cover-v1 li { font-size: 15px; color: #eadfd6; }
+      .cover-v1 .cta { background: var(--lime); color: var(--ink); font-family: var(--display); font-stretch: 115%; letter-spacing: .06em; text-transform: uppercase; font-size: 13px; }
+
+      /* Versão 2 — the cover wears the briefing's type and palette */
+      .cover-v2 { background: var(--v2-brown); color: var(--v2-cream); }
+      .cover-v2 .masthead { background: var(--v2-sand); color: var(--v2-brown); }
+      .cover-v2 .logo { display: block; width: clamp(150px, 20vw, 250px); height: auto; }
+      .cover-v2 .issue { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: .08em; }
+      .cover-v2 .lines { background: linear-gradient(0deg, #5c3a1d 0, #5c3a1d calc(100% - 72px), #5c3a1d00 100%); }
+      .cover-v2 .kicker { display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--v2-terracotta); color: var(--v2-sand); font: 700 12px 'Be Vietnam Pro', sans-serif; letter-spacing: .04em; }
+      .cover-v2 .lines h2 { margin-top: 12px; font-family: 'Encode Sans', sans-serif; font-weight: 600; font-stretch: 75%; font-size: clamp(34px, 3.9vw, 54px); line-height: .95; letter-spacing: -.01em; }
+      .cover-v2 li { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; color: var(--v2-sand); }
+      .cover-v2 .cta { background: var(--v2-cream); color: var(--v2-brown); font-family: 'Be Vietnam Pro', sans-serif; }
+
+      .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 48px; padding-top: 20px; border-top: 1px solid #f6f4eb24; color: var(--paper-dim); font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+
+      @media (max-width: 760px) {
+        .stand { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+        .cover { aspect-ratio: auto; }
+        .photo { flex: none; aspect-ratio: 1 / 1; }
+        .lines { position: relative; padding-top: 20px; }
+        .cover-v1 .lines, .cover-v2 .lines { background-image: none; }
+        .cover-v1 .lines { background-color: #2a1c1a; }
+        .cover-v2 .lines { background-color: #5c3a1d; }
+        .cover-v1 .logo { font-size: 92px; }
+        .cover-v2 .logo { width: 200px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cover, .photo img, .cta { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="intro">
+        <div>
+          <div class="brand" aria-label="Kin">kin<span>.</span></div>
+          <h1>Duas capas,<br /> <em>um clube.</em></h1>
+        </div>
+        <p>Proposta de landing page para a Kin, clube urbano de movimento na Vila Mariana. <strong>Escolha uma capa para abrir a página.</strong></p>
+      </header>
+
+      <main class="stand">
+        <a class="cover cover-v1" href="versao-1/" aria-label="Abrir a versão 1: direção autoral">
+          <div class="masthead">
+            <span class="logo" aria-hidden="true">kin<span>.</span></span>
+            <span class="issue"><span>Versão 1</span><span>Setembro 2026</span></span>
+          </div>
+          <div class="photo"><img src="capa/capa-versao-1.jpg" alt="Primeira dobra da versão 1: título Onde os movimentos se encontram sobre fundo coral, com trajetórias de movimento desenhadas" width="1050" height="1266" /></div>
+          <div class="lines">
+            <span class="kicker">Direção autoral</span>
+            <h2>Movimento <em>em cada detalhe</em></h2>
+            <ul>
+              <li>Tipografia que comprime e estica</li>
+              <li>Trajetórias que se encontram no hero</li>
+              <li>Formas 3D em movimento</li>
+            </ul>
+            <span class="cta">Ver versão 1 <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="cover cover-v2" href="versao-2/" aria-label="Abrir a versão 2: fiel ao briefing">
+          <div class="masthead">
+            <svg class="logo" viewBox="61 61 156 55" aria-hidden="true"><path d="M 124.77 62.76 L 136.5 62.76 L 136.5 96.16 L 146.92 80.01 L 160.04 80.01 L 149.13 96.02 L 163 114.52 L 149.55 114.52 L 142.71 105.41 L 136.5 114.52 L 124.77 114.52 Z" fill="currentColor"/><path d="M 164.87 80.01 L 176.6 80.01 L 176.6 114.52 L 164.87 114.52 Z" fill="currentColor"/><path d="M 192.2 114.52 L 180.46 114.52 L 180.46 96.71 C 180.46 94.09 180.88 91.71 181.71 89.57 C 182.54 87.43 183.73 85.6 185.3 84.09 C 186.86 82.57 188.73 81.39 190.92 80.57 C 193.11 79.74 195.53 79.32 198.2 79.32 C 200.82 79.32 203.2 79.74 205.34 80.57 C 207.48 81.39 209.31 82.57 210.83 84.09 C 212.35 85.6 213.52 87.43 214.35 89.57 C 215.18 91.71 215.59 94.09 215.59 96.71 L 215.59 114.52 L 203.86 114.52 L 203.86 96.16 C 203.86 94.41 203.32 93.01 202.24 91.95 C 201.16 90.89 199.74 90.37 198 90.37 C 196.25 90.37 194.84 90.89 193.79 91.95 C 192.72 93.01 192.2 94.41 192.2 96.16 Z" fill="currentColor"/><path d="M 176.81 67.74 C 177.48 71.09 175.31 74.36 171.95 75.03 C 168.59 75.71 165.33 73.53 164.66 70.18 C 163.98 66.82 166.16 63.55 169.52 62.88 C 172.87 62.21 176.14 64.38 176.81 67.74" fill="#c47c4a"/><path d="M 110.46 114.52 L 99.05 114.52 C 98.89 110.12 96.15 106.01 91.79 104.32 C 85.93 102.05 79.32 104.96 77.05 110.82 L 66.43 106.71 C 68.63 101.03 72.9 96.55 78.47 94.1 C 84.04 91.64 90.23 91.5 95.9 93.7 C 101.57 95.89 106.05 100.17 108.51 105.74 C 109.75 108.56 110.4 111.54 110.46 114.52" fill="currentColor"/><path d="M 62.18 85.16 L 73.35 82.92 C 74.59 89.08 80.6 93.08 86.76 91.85 C 92.92 90.61 96.92 84.6 95.69 78.44 L 106.86 76.2 C 108.05 82.17 106.86 88.24 103.48 93.31 C 100.11 98.37 94.96 101.82 89 103.02 C 83.04 104.21 76.96 103.01 71.89 99.64 C 66.83 96.27 63.38 91.12 62.18 85.16" fill="currentColor"/><path d="M 90.94 79.36 C 91.65 82.91 89.35 86.37 85.8 87.08 C 82.25 87.79 78.8 85.49 78.09 81.94 C 77.38 78.39 79.68 74.94 83.23 74.23 C 86.77 73.52 90.23 75.81 90.94 79.36" fill="#c47c4a"/></svg>
+            <span class="issue"><span>Versão 2</span><span>Setembro 2026</span></span>
+          </div>
+          <div class="photo"><img src="capa/capa-versao-2.jpg" alt="Primeira dobra da versão 2: layout do briefing em terracota, com o título Onde os movimentos se encontram e as formas marrons" width="1050" height="1282" /></div>
+          <div class="lines">
+            <span class="kicker">Fiel ao briefing</span>
+            <h2>O briefing, do jeito que foi desenhado</h2>
+            <ul>
+              <li>Layout, cores e vetores do PDF</li>
+              <li>Copy integral do briefing</li>
+              <li>Ícones e formas originais</li>
+            </ul>
+            <span class="cta">Ver versão 2 <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </main>
+
+      <footer class="foot">
+        <span>Kin · Clube urbano de movimento</span>
+        <span>Rua Correia Dias, 73 · Vila Mariana · São Paulo</span>
+      </footer>
+    </div>
+    <script>
+      // Covers tilt toward the pointer, like picking a magazine up from the stand.
+      if (matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.cover').forEach((cover) => {
+          cover.addEventListener('pointermove', (event) => {
+            const box = cover.getBoundingClientRect()
+            const x = (event.clientX - box.left) / box.width - 0.5
+            const y = (event.clientY - box.top) / box.height - 0.5
+            cover.style.setProperty('--ry', `${x * 9}deg`)
+            cover.style.setProperty('--rx', `${y * -7}deg`)
+          })
+          cover.addEventListener('pointerleave', () => { cover.style.removeProperty('--ry'); cover.style.removeProperty('--rx') })
+        })
+      }
+    </script>
+  </body>
+
+</html>
